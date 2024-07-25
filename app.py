@@ -6,33 +6,19 @@ Created on Thu Jul 25 09:20:32 2024
 """
 
 import streamlit as st
-from pydrive2.auth import GoogleAuth
-from pydrive2.drive import GoogleDrive
-import pandas as pd
-import io
 
-# Autenticación con Google Drive
-gauth = GoogleAuth()
-gauth.LocalWebserverAuth()  # Abre un navegador para autenticarse
-drive = GoogleDrive(gauth)
+# URL del Formulario de Google Forms
+form_url = 'https://docs.google.com/forms/d/1gVCG45UPELL_UVhMCCPne415MmHYMQgH76xBV2wb2z8/edit'  # Reemplaza con la URL de tu formulario de Google Forms
 
-def save_user_profile(name, role, description, dob):
-    file_content = f'Nombre: {name}\nRol: {role}\nDescripción: {description}\nFecha de Nacimiento: {dob}'
-    file_drive = drive.CreateFile({'title': f'{name}_profile.txt', 'mimeType': 'text/plain'})
-    file_drive.UploadMetadata()
-    file_drive.Upload(io.BytesIO(file_content.encode('utf-8')))
-    return file_drive['id']
+# URL de la Hoja de Cálculo de Google Sheets
+sheet_url = 'https://docs.google.com/spreadsheets/d/1PJFCnpYxmAzjcH3Faav1jDnaJYX7B_mXpllXWQWZ7Ak/edit?resourcekey=&gid=440930739#gid=440930739'  # Reemplaza con la URL de tu hoja de cálculo de Google Sheets
 
 st.title('Registro de Usuarios')
 
-name = st.text_input('Nombre')
-role = st.text_input('Rol')
-description = st.text_area('Descripción')
-dob = st.date_input('Fecha de Nacimiento')
+st.write('Por favor, completa el siguiente formulario para registrar tus datos:')
+st.markdown(f"[Formulario de Registro]({form_url})", unsafe_allow_html=True)
 
-if st.button('Guardar Perfil'):
-    if name and role and description:
-        file_id = save_user_profile(name, role, description, dob)
-        st.success(f'Perfil guardado con éxito! ID del archivo en Google Drive: {file_id}')
-    else:
-        st.error('Por favor, completa todos los campos antes de guardar el perfil.')
+st.write('Puedes ver los datos recopilados en la siguiente hoja de cálculo:')
+st.markdown(f"[Hoja de Cálculo de Google Sheets]({sheet_url})", unsafe_allow_html=True)
+
+# Si quieres permitir la carga de datos adicionales o realizar otras acciones, puedes hacerlo aquí

@@ -6,19 +6,27 @@ Created on Thu Jul 25 09:20:32 2024
 """
 
 import streamlit as st
-
-# URL del Formulario de Google Forms
-form_url = 'https://docs.google.com/forms/d/1JQiF4KYJ0-NkF_3_RWXKbm6aOY9KTiJpMQo48qlCNMo/edit'  # Reemplaza con la URL de tu formulario de Google Forms
-
-# URL de la Hoja de Cálculo de Google Sheets
-sheet_url = 'https://docs.google.com/spreadsheets/d/1gEHWpmHe__0W9aT69_BFpOMbqRbETdnYYJEHXXXl0l0/edit?resourcekey=&gid=1734017180#gid=1734017180'  # Reemplaza con la URL de tu hoja de cálculo de Google Sheets
+import pandas as pd
 
 st.title('Registro de Usuarios')
 
-st.write('Por favor, completa el siguiente formulario para registrar tus datos:')
-st.markdown(f"[Formulario de Registro]({form_url})", unsafe_allow_html=True)
+# Formulario para ingresar datos
+name = st.text_input('Nombre')
+dob = st.date_input('Fecha de Nacimiento')
 
-st.write('Puedes ver los datos recopilados en la siguiente hoja de cálculo:')
-st.markdown(f"[Hoja de Cálculo de Google Sheets]({sheet_url})", unsafe_allow_html=True)
-
-# Si quieres permitir la carga de datos adicionales o realizar otras acciones, puedes hacerlo aquí
+# Botón para enviar datos
+if st.button('Registrar'):
+    # Cargar datos existentes
+    try:
+        df = pd.read_csv('usuarios.csv')
+    except FileNotFoundError:
+        df = pd.DataFrame(columns=['Nombre', 'Fecha de Nacimiento'])
+    
+    # Agregar nuevo registro
+    new_row = {'Nombre': name, 'Fecha de Nacimiento': dob}
+    df = df.append(new_row, ignore_index=True)
+    
+    # Guardar datos
+    df.to_csv('usuarios.csv', index=False)
+    
+    st.success('¡Datos registrados exitosamente!')

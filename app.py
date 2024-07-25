@@ -5,13 +5,6 @@ Created on Thu Jul 25 09:20:32 2024
 @author: jperezr
 """
 
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jul 25 09:20:32 2024
-
-@author: jperezr
-"""
-
 import streamlit as st
 import pandas as pd
 import os
@@ -77,7 +70,17 @@ for index, row in perfiles_df.iterrows():
     st.subheader(row['Nombre'])
     st.write(f"**Rol:** {row['Rol']}")
     st.write(f"**Descripción:** {row['Descripción']}")
-    st.write(f"**Fecha de Nacimiento:** {row['Fecha de Nacimiento'].strftime('%d/%m/%Y') if pd.notna(row['Fecha de Nacimiento']) else 'No disponible'}")
+    
+    # Verificar si la fecha de nacimiento es válida antes de formatear
+    if pd.notna(row['Fecha de Nacimiento']):
+        try:
+            fecha_nacimiento = pd.to_datetime(row['Fecha de Nacimiento'])
+            st.write(f"**Fecha de Nacimiento:** {fecha_nacimiento.strftime('%d/%m/%Y')}")
+        except ValueError:
+            st.write("**Fecha de Nacimiento:** No disponible")
+    else:
+        st.write("**Fecha de Nacimiento:** No disponible")
+    
     if pd.notna(row['Foto']) and row['Foto'] != "":
         st.image(row['Foto'], width=200)  # Ajuste del tamaño de la imagen
 

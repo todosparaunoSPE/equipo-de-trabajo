@@ -23,8 +23,8 @@ if st.button('Registrar'):
         df = pd.DataFrame(columns=['Nombre', 'Fecha de Nacimiento'])
     
     # Agregar nuevo registro
-    new_row = {'Nombre': name, 'Fecha de Nacimiento': dob}
-    df = df.append(new_row, ignore_index=True)
+    new_row = pd.DataFrame({'Nombre': [name], 'Fecha de Nacimiento': [dob]})
+    df = pd.concat([df, new_row], ignore_index=True)
     
     # Guardar datos
     df.to_csv('usuarios.csv', index=False)

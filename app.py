@@ -10,13 +10,20 @@ import pandas as pd
 import os
 from datetime import datetime
 
+# Directorio del script
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
 # Verificar y crear el directorio de fotos si no existe
-if not os.path.exists("fotos"):
-    os.makedirs("fotos")
+fotos_dir = os.path.join(base_dir, "fotos")
+if not os.path.exists(fotos_dir):
+    os.makedirs(fotos_dir)
+
+# Ruta del archivo CSV
+csv_path = os.path.join(base_dir, 'perfiles.csv')
 
 # Cargar los perfiles existentes
-if os.path.exists('perfiles.csv'):
-    perfiles_df = pd.read_csv('perfiles.csv')
+if os.path.exists(csv_path):
+    perfiles_df = pd.read_csv(csv_path)
     # Asegurarse de que las columnas necesarias están presentes
     if 'Fecha de Nacimiento' not in perfiles_df.columns:
         perfiles_df['Fecha de Nacimiento'] = pd.NaT
@@ -51,7 +58,8 @@ foto = st.sidebar.file_uploader("Foto", type=['jpg', 'png'])
 if st.sidebar.button("Guardar Perfil"):
     if nombre and rol and descripcion:
         if foto:
-            foto_path = os.path.join("fotos", f"{nombre}.jpg")
+            # Guardar la foto
+            foto_path = os.path.join(fotos_dir, f"{nombre}.jpg")
             with open(foto_path, "wb") as f:
                 f.write(foto.getbuffer())
         else:
@@ -59,7 +67,7 @@ if st.sidebar.button("Guardar Perfil"):
 
         nuevo_perfil = pd.DataFrame({'Nombre': [nombre], 'Rol': [rol], 'Descripción': [descripcion], 'Fecha de Nacimiento': [fecha_nacimiento], 'Foto': [foto_path]})
         perfiles_df = pd.concat([perfiles_df, nuevo_perfil], ignore_index=True)
-        perfiles_df.to_csv('perfiles.csv', index=False)
+        perfiles_df.to_csv(csv_path, index=False)
         st.sidebar.success("Perfil guardado con éxito!")
     else:
         st.sidebar.error("Por favor, completa todos los campos antes de guardar el perfil.")

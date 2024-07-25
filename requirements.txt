@@ -3,3 +3,4 @@ pandas==2.2.1
 pydrive2
 google-api-python-client==2.137.0
 google-auth==2.32.0
+PyDrive==1.3.1

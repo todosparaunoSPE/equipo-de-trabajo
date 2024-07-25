@@ -4,6 +4,7 @@ Created on Thu Jul 25 09:20:32 2024
 
 @author: jperezr
 """
+
 import streamlit as st
 import pandas as pd
 import os
@@ -90,8 +91,14 @@ for perfil in perfiles:
     else:
         st.write("**Fecha de Nacimiento:** No disponible")
 
-    if foto_path:
-        st.image(foto_path, width=200)  # Ajuste del tamaño de la imagen
+    # Verificar si la foto existe antes de intentar mostrarla
+    if foto_path and os.path.exists(foto_path):
+        try:
+            st.image(foto_path, width=200)  # Ajuste del tamaño de la imagen
+        except Exception as e:
+            st.write("**Foto:** No disponible")
+    else:
+        st.write("**Foto:** No disponible")
 
 # Agregar el texto de copyright en la parte inferior de la página
 st.markdown("""

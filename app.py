@@ -8,10 +8,10 @@ Created on Thu Jul 25 09:20:32 2024
 import streamlit as st
 
 # URL del Formulario de Google Forms
-form_url = 'https://docs.google.com/forms/d/1gVCG45UPELL_UVhMCCPne415MmHYMQgH76xBV2wb2z8/edit'  # Reemplaza con la URL de tu formulario de Google Forms
+form_url = 'https://docs.google.com/forms/d/10Fa9B03bKGqr0zDQZEFvYPfku21YGFvJYv1fAkYg0Gc/edit'  # Reemplaza con la URL de tu formulario de Google Forms
 
 # URL de la Hoja de Cálculo de Google Sheets
-sheet_url = 'https://docs.google.com/spreadsheets/d/1PJFCnpYxmAzjcH3Faav1jDnaJYX7B_mXpllXWQWZ7Ak/edit?resourcekey=&gid=440930739#gid=440930739'  # Reemplaza con la URL de tu hoja de cálculo de Google Sheets
+sheet_url = 'https://docs.google.com/spreadsheets/d/1pce-7g9cM97pVkPtAjbzfNOwq_sdGwakBDc56O9kyzU/edit?resourcekey=&gid=1397099066#gid=1397099066'  # Reemplaza con la URL de tu hoja de cálculo de Google Sheets
 
 st.title('Registro de Usuarios')
 

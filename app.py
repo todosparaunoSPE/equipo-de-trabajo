@@ -7,23 +7,38 @@ Created on Thu Jul 25 09:20:32 2024
 
 import streamlit as st
 import pandas as pd
+from pydrive2.auth import GoogleAuth
+from pydrive2.drive import GoogleDrive
 import os
 from datetime import datetime
 
-# Verificar y crear el directorio de fotos y usuarios si no existen
-if not os.path.exists("fotos"):
-    os.makedirs("fotos")
-if not os.path.exists("usuarios"):
-    os.makedirs("usuarios")
+# Autenticación con Google Drive
+gauth = GoogleAuth()
+gauth.LoadCredentialsFile("credentials.json")
+if gauth.credentials is None:
+    # No hay credenciales guardadas
+    gauth.LocalWebserverAuth()
+elif gauth.access_token_expired:
+    # Las credenciales han expirado
+    gauth.Refresh()
+else:
+    # Las credenciales son válidas
+    gauth.Authorize()
+gauth.SaveCredentialsFile("credentials.json")
 
-# Cargar los perfiles existentes desde archivos .txt
+drive = GoogleDrive(gauth)
+
+# ID de la carpeta de Google Drive donde se almacenarán los archivos
+FOLDER_ID = '1fSi9Pi01wn1zKD_sWm67ZOMjIE4Xr0-g'
+
+# Cargar los perfiles existentes desde Google Drive
 def cargar_perfiles():
     perfiles = []
-    for archivo in os.listdir("usuarios"):
-        if archivo.endswith(".txt"):
-            with open(os.path.join("usuarios", archivo), "r") as f:
-                perfil = f.read().splitlines()
-                perfiles.append(perfil)
+    file_list = drive.ListFile({'q': f"'{FOLDER_ID}' in parents and mimeType='text/plain'"}).GetList()
+    for file in file_list:
+        file_content = file.GetContentString()
+        perfil = file_content.splitlines()
+        perfiles.append(perfil)
     return perfiles
 
 perfiles = cargar_perfiles()
@@ -57,15 +72,20 @@ if st.sidebar.button("Guardar Perfil"):
     if nombre and rol and descripcion:
         # Guardar la foto
         if foto:
-            foto_path = os.path.join("fotos", f"{nombre}.jpg")
-            with open(foto_path, "wb") as f:
-                f.write(foto.getbuffer())
+            foto_path = f"{nombre}.jpg"
+            foto_file = drive.CreateFile({'title': foto_path, 'parents': [{'id': FOLDER_ID}]})
+            foto_file.SetContentFile(foto_path)
+            foto_file.Upload()
+            foto_id = foto_file['id']
         else:
-            foto_path = ""
+            foto_id = ""
 
         # Guardar los datos en un archivo .txt
-        with open(os.path.join("usuarios", f"{nombre}.txt"), "w") as f:
-            f.write(f"{nombre}\n{rol}\n{descripcion}\n{fecha_nacimiento}\n{foto_path}")
+        perfil_path = f"{nombre}.txt"
+        perfil_content = f"{nombre}\n{rol}\n{descripcion}\n{fecha_nacimiento}\n{foto_id}"
+        perfil_file = drive.CreateFile({'title': perfil_path, 'parents': [{'id': FOLDER_ID}]})
+        perfil_file.SetContentString(perfil_content)
+        perfil_file.Upload()
 
         st.sidebar.success("Perfil guardado con éxito!")
         # Recargar los perfiles
@@ -76,7 +96,7 @@ if st.sidebar.button("Guardar Perfil"):
 # Mostrar los perfiles
 st.header("Perfiles del Equipo")
 for perfil in perfiles:
-    nombre, rol, descripcion, fecha_nacimiento, foto_path = perfil
+    nombre, rol, descripcion, fecha_nacimiento, foto_id = perfil
     st.subheader(nombre)
     st.write(f"**Rol:** {rol}")
     st.write(f"**Descripción:** {descripcion}")
@@ -92,9 +112,10 @@ for perfil in perfiles:
         st.write("**Fecha de Nacimiento:** No disponible")
 
     # Verificar si la foto existe antes de intentar mostrarla
-    if foto_path and os.path.exists(foto_path):
+    if foto_id:
+        foto_url = f"https://drive.google.com/uc?id={foto_id}"
         try:
-            st.image(foto_path, width=200)  # Ajuste del tamaño de la imagen
+            st.image(foto_url, width=200)  # Ajuste del tamaño de la imagen
         except Exception as e:
             st.write("**Foto:** No disponible")
     else:

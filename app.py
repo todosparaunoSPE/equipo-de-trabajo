@@ -18,7 +18,7 @@ sheet_url = "https://docs.google.com/spreadsheets/d/1OsShDjCOCM0OgPBMYh1LMKgrLw5
 with st.sidebar:
     st.header("")
     st.markdown("""
-        ## Solicitud para completar un formulario importante
+        ## ¡Viernes de Trivia en AFORE PENSIONISSSTE! 🎉
 
         Hola a todos,
 

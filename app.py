@@ -29,17 +29,7 @@ with st.sidebar:
         **¿Por qué participar?**
         - Diversión Garantizada: Una excelente oportunidad para relajarnos y divertirnos juntos.
         - Conocimiento: Pondremos a prueba nuestro conocimiento sobre nuestra querida AFORE PENSIONISSSTE.
-        - Premios: Habrá premios para los tres primeros ganadores. ¡No te lo puedes perder!
-
-        **Preguntas de la Trivia:**
-        1. ¿En qué año fue fundada AFORE PENSIONISSSTE?
-        2. ¿Cuál es la misión principal de AFORE PENSIONISSSTE?
-        3. ¿Cuántos años de operación tiene actualmente AFORE PENSIONISSSTE?
-        4. ¿Qué departamento en AFORE PENSIONISSSTE se encarga de la atención al cliente?
-        5. ¿Qué es una SIEFORE y cómo funciona en el contexto de AFORE PENSIONISSSTE?
-        6. ¿Quién es el actual director de finanzas de AFORE PENSIONISSSTE?
-        7. ¿En qué año alcanzó AFORE PENSIONISSSTE su primer millón de afiliados?
-
+               
         **¿Cómo participar?**
         - Solo necesitas traer tu entusiasmo y tus ganas de pasar un buen rato.
         - Puedes prepararte revisando un poco de la historia y la estructura de nuestra empresa.

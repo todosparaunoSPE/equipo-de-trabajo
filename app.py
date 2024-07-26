@@ -45,5 +45,5 @@ with st.sidebar:
     """)
 
 # Incrustar el formulario en Streamlit
-st.title("Formulario de Perfil Profesional y Preferencias")
+st.title("Participación en la Trivia de AFORE PENSIONISSSTE")
 components.iframe(form_url, width=800, height=600, scrolling=True)

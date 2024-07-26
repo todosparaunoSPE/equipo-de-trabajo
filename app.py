@@ -6,27 +6,11 @@ Created on Thu Jul 25 09:20:32 2024
 """
 
 import streamlit as st
-import pandas as pd
+import streamlit.components.v1 as components
 
-st.title('Registro de Usuarios')
+# URL del formulario de Google Forms
+form_url = "https://docs.google.com/forms/d/e/19kNQjVtZYu1WphrcqwWU0byg3zvpBmM5DrMcbLFwVIw/viewform"
 
-# Formulario para ingresar datos
-name = st.text_input('Nombre')
-dob = st.date_input('Fecha de Nacimiento')
-
-# Botón para enviar datos
-if st.button('Registrar'):
-    # Cargar datos existentes
-    try:
-        df = pd.read_csv('usuarios.csv')
-    except FileNotFoundError:
-        df = pd.DataFrame(columns=['Nombre', 'Fecha de Nacimiento'])
-    
-    # Agregar nuevo registro
-    new_row = pd.DataFrame({'Nombre': [name], 'Fecha de Nacimiento': [dob]})
-    df = pd.concat([df, new_row], ignore_index=True)
-    
-    # Guardar datos
-    df.to_csv('usuarios.csv', index=False)
-    
-    st.success('¡Datos registrados exitosamente!')
+# Incrustar el formulario en Streamlit
+st.title("Formulario de Google en Streamlit")
+components.iframe(form_url, width=800, height=600, scrolling=True)

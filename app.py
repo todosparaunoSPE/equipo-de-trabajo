@@ -24,7 +24,7 @@ with st.sidebar:
 
         Espero que se encuentren bien.
 
-        Quisiera pedir su colaboración para completar un formulario que nos ayudará a entender mejor nuestras preferencias y habilidades profesionales. Sus respuestas serán muy valiosas para "mejorar la asignación de proyectos" o "fomentar un ambiente de trabajo más colaborativo"].
+        Quisiera pedir su colaboración para completar un formulario que nos ayudará a entender mejor nuestras preferencias y habilidades profesionales. Sus respuestas serán muy valiosas para "mejorar la asignación de proyectos" o "fomentar un ambiente de trabajo más colaborativo".
 
         Por favor, tómense un momento para llenar el formulario.
 

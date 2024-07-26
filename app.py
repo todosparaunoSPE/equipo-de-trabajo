@@ -19,11 +19,11 @@ with st.sidebar:
     st.markdown("""
         ## Instrucciones
         
-        **Formulario de Google:**
+        ##**Formulario de Google:**
         Completa el formulario incrustado a continuación para enviar tu información. Asegúrate de completar todos los campos requeridos.
 
-        **Hoja de Cálculo:**
-        [Accede a la hoja de cálculo aquí](https://docs.google.com/spreadsheets/d/1OsShDjCOCM0OgPBMYh1LMKgrLw5qgLg8s2ol6oIr3r0/edit?resourcekey=&gid=132221002#gid=132221002) para ver los datos registrados.
+        ##**Hoja de Cálculo:**
+        ##[Accede a la hoja de cálculo aquí](https://docs.google.com/spreadsheets/d/1OsShDjCOCM0OgPBMYh1LMKgrLw5qgLg8s2ol6oIr3r0/edit?resourcekey=&gid=132221002#gid=132221002) para ver los datos registrados.
 
         Si tienes alguna pregunta, por favor contacta al soporte.
     """)

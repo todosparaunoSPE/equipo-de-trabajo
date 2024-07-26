@@ -36,8 +36,8 @@ with st.sidebar:
         Agradezco de antemano su colaboración.
 
         Saludos cordiales,  
-        Javier Horacio Pérez Ricárdez
-        Analista UEAP "B"
+        - Javier Horacio Pérez Ricárdez
+        - Analista UEAP "B"
         
 
         © 2024 jahoperi. Todos los derechos reservados.

@@ -35,7 +35,7 @@ with st.sidebar:
         - Puedes prepararte revisando un poco de la historia y la estructura de nuestra empresa.
         - No necesitas ser un experto para participar; lo más importante es divertirse y compartir un buen momento con tus compañeros.
 
-        ¡Nos vemos este viernes para una tarde de trivia, risas y premios! 🏆🎉
+        ¡Nos vemos este viernes para un día de trivia! 🏆🎉
 
         Saludos,  
         Javier Horacio Pérez Ricárdez  

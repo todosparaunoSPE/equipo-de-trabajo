@@ -24,8 +24,8 @@ with st.sidebar:
 
         Espero que estén teniendo una excelente semana. Para cerrar con broche de oro, quiero invitarlos a un evento especial este viernes: ¡una Trivia divertida sobre AFORE PENSIONISSSTE!
 
-        📅 Fecha: Este viernes 26/07/2024
-        🕒 Hora: Hasta las 5 pm
+        - 📅 Fecha: Este viernes 26/07/2024
+        - 🕒 Hora: Hasta las 5 pm
        
         
         **Instrucciones:**

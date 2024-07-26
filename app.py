@@ -38,10 +38,9 @@ with st.sidebar:
         ¡Nos vemos este viernes para un día de trivia! 🏆🎉
 
         Saludos,  
-        Javier Horacio Pérez Ricárdez  
-        Analista UEAP "B"
+        Javier 
         
-        © 2024 jahoperi. Todos los derechos reservados.
+        © 2024 Todos los derechos reservados.
     """)
 
 # Incrustar el formulario en Streamlit

@@ -19,12 +19,14 @@ with st.sidebar:
     st.markdown("""
         ## Instrucciones
         
-       
         Completa el formulario incrustado a continuación para enviar tu información. Asegúrate de completar todos los campos requeridos.
 
         Si tienes alguna pregunta, por favor contacta al soporte.
     """)
+    st.markdown("""
+        © 2024 jahoperi. Todos los derechos reservados.
+    """)
 
 # Incrustar el formulario en Streamlit
-st.title("Formulario de Google en Streamlit")
+st.title("Formulario de Perfil Profesional y Preferencias")
 components.iframe(form_url, width=800, height=600, scrolling=True)

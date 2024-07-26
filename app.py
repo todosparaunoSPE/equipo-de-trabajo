@@ -22,12 +22,12 @@ with st.sidebar:
 
         Hola a todos,
 
-        Espero que se encuentren bien.
+        Espero que estén teniendo una excelente semana. Para cerrar con broche de oro, quiero invitarlos a un evento especial este viernes: ¡una Trivia divertida sobre AFORE PENSIONISSSTE!
 
-        Quisiera pedir su colaboración para completar un formulario que nos ayudará a entender mejor nuestras preferencias y habilidades profesionales. Sus respuestas serán muy valiosas para "mejorar la asignación de proyectos" o "fomentar un ambiente de trabajo más colaborativo".
-
-        Por favor, tómense un momento para llenar el formulario.
-
+        📅 Fecha: Este viernes 26/07/2024
+        🕒 Hora: Hasta las 5 pm
+        🏢 Lugar: [Especifica el lugar, puede ser una sala de reuniones o virtualmente si es a través de una videollamada]
+        
         **Instrucciones:**
 
         - Completen todos los campos requeridos.

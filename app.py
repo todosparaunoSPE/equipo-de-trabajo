@@ -26,7 +26,7 @@ with st.sidebar:
 
         📅 Fecha: Este viernes 26/07/2024
         🕒 Hora: Hasta las 5 pm
-        🏢 Lugar: [Especifica el lugar, puede ser una sala de reuniones o virtualmente si es a través de una videollamada]
+       
         
         **Instrucciones:**
 

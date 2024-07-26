@@ -16,7 +16,7 @@ sheet_url = "https://docs.google.com/spreadsheets/d/1OsShDjCOCM0OgPBMYh1LMKgrLw5
 
 # Configuración de la barra lateral
 with st.sidebar:
-    st.header("Ayuda")
+    st.header("")
     st.markdown("""
         ## Solicitud para completar un formulario importante
 

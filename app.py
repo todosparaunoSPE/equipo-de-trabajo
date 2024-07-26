@@ -24,9 +24,9 @@ with st.sidebar:
 
         Espero que se encuentren bien.
 
-        Quisiera pedir su colaboración para completar un formulario que nos ayudará a entender mejor nuestras preferencias y habilidades profesionales. Sus respuestas serán muy valiosas para [explicar brevemente el propósito, como "mejorar la asignación de proyectos" o "fomentar un ambiente de trabajo más colaborativo"].
+        Quisiera pedir su colaboración para completar un formulario que nos ayudará a entender mejor nuestras preferencias y habilidades profesionales. Sus respuestas serán muy valiosas para "mejorar la asignación de proyectos" o "fomentar un ambiente de trabajo más colaborativo"].
 
-        Por favor, tómense un momento para llenar el formulario a través del siguiente enlace: [Formulario de Perfil Profesional y Preferencias](https://docs.google.com/forms/d/e/1FAIpQLSfz9RyOoxql_5ULHpthE33PcAVJOAn9wZBSa32SapsBzYkRFQ/viewform?usp=sf_link).
+        Por favor, tómense un momento para llenar el formulario.
 
         **Instrucciones:**
 
@@ -36,11 +36,11 @@ with st.sidebar:
         Agradezco de antemano su colaboración.
 
         Saludos cordiales,  
-        [Tu Nombre]  
-        [Tu Puesto]  
-        [Tu Empresa]
+        Javier Horacio Pérez Ricárdez
+        Analista UEAP "B"
+        
 
-        © 2024 Tu Empresa. Todos los derechos reservados.
+        © 2024 jahoperi. Todos los derechos reservados.
     """)
 
 # Incrustar el formulario en Streamlit

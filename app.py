@@ -9,7 +9,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 # URL del formulario de Google Forms
-form_url = "https://docs.google.com/forms/d/e/19kNQjVtZYu1WphrcqwWU0byg3zvpBmM5DrMcbLFwVIw/viewform"
+form_url = "https://docs.google.com/forms/d/19kNQjVtZYu1WphrcqwWU0byg3zvpBmM5DrMcbLFwVIw/edit?pli=1"
 
 # Incrustar el formulario en Streamlit
 st.title("Formulario de Google en Streamlit")

@@ -4,6 +4,7 @@ Created on Thu Jul 25 09:20:32 2024
 
 @author: jperezr
 """
+
 import streamlit as st
 import streamlit.components.v1 as components
 
@@ -17,14 +18,29 @@ sheet_url = "https://docs.google.com/spreadsheets/d/1OsShDjCOCM0OgPBMYh1LMKgrLw5
 with st.sidebar:
     st.header("Ayuda")
     st.markdown("""
-        ## Instrucciones
-        
-        Completa el formulario incrustado a continuación para enviar tu información. Asegúrate de completar todos los campos requeridos.
+        ## Solicitud para completar un formulario importante
 
-        Si tienes alguna pregunta, por favor contacta al soporte.
-    """)
-    st.markdown("""
-        © 2024 jahoperi. Todos los derechos reservados.
+        Hola a todos,
+
+        Espero que se encuentren bien.
+
+        Quisiera pedir su colaboración para completar un formulario que nos ayudará a entender mejor nuestras preferencias y habilidades profesionales. Sus respuestas serán muy valiosas para [explicar brevemente el propósito, como "mejorar la asignación de proyectos" o "fomentar un ambiente de trabajo más colaborativo"].
+
+        Por favor, tómense un momento para llenar el formulario a través del siguiente enlace: [Formulario de Perfil Profesional y Preferencias](https://docs.google.com/forms/d/e/1FAIpQLSfz9RyOoxql_5ULHpthE33PcAVJOAn9wZBSa32SapsBzYkRFQ/viewform?usp=sf_link).
+
+        **Instrucciones:**
+
+        - Completen todos los campos requeridos.
+        - Si tienen alguna pregunta o inquietud, no duden en contactarme.
+
+        Agradezco de antemano su colaboración.
+
+        Saludos cordiales,  
+        [Tu Nombre]  
+        [Tu Puesto]  
+        [Tu Empresa]
+
+        © 2024 Tu Empresa. Todos los derechos reservados.
     """)
 
 # Incrustar el formulario en Streamlit

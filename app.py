@@ -14,4 +14,5 @@ form_url = "https://docs.google.com/forms/d/e/1FAIpQLSfz9RyOoxql_5ULHpthE33PcAVJ
 st.title("Formulario de Google en Streamlit")
 components.iframe(form_url, width=800, height=600, scrolling=True)
 
-
+# Agregar un enlace a Google Sheet
+st.markdown(f"[Accede a la hoja de cálculo aquí]({https://docs.google.com/spreadsheets/d/1OsShDjCOCM0OgPBMYh1LMKgrLw5qgLg8s2ol6oIr3r0/edit?resourcekey=&gid=132221002#gid=132221002})", unsafe_allow_html=True)
